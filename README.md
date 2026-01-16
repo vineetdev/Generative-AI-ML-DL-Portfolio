@@ -18,7 +18,7 @@
 
 ## 📋 Overview
 
-This portfolio presents a comprehensive collection of projects spanning the overall spectrum of AI/ML technologies, from traditional machine learning algorithms to cutting-edge generative AI applications. Each project demonstrates different aspects of AI development, including:
+This portfolio presents a comprehensive collection of projects spanning from traditional machine learning algorithms to cutting-edge generative AI applications. Each project demonstrates different aspects of AI development, including:
 
 - **Generative AI**: LLM-powered applications, chatbots, and content generation
 - **NLP & Knowledge Graphs**: Entity extraction, relationship mapping, and structured data processing
