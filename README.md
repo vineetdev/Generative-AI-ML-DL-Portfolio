@@ -24,7 +24,7 @@ This portfolio presents a comprehensive collection of projects spanning from tra
 - **NLP & Knowledge Graphs**: Entity extraction, relationship mapping, and structured data processing
 - **Real-time AI**: WebRTC integration with AI models for live applications
 - **Deep Learning**: Neural network architectures and training pipelines
-- **Machine Learning**: Classification algorithms, model comparison, and performance analysis
+- **Machine Learning**: Classification algorithms, regression models, model comparison, and performance analysis
 
 ---
 
@@ -45,9 +45,19 @@ This portfolio presents a comprehensive collection of projects spanning from tra
 | 2 | 💼 **[Financial Knowledge Graph Extractor](https://github.com/vineetdev/financial-knowledge-graph-extractor)** | Transforms unstructured financial documents into structured knowledge graphs. Extracts entities, relationships, and financial metrics using LangChain and OpenAI GPT-4o-mini. | [View](https://github.com/vineetdev/financial-knowledge-graph-extractor) |
 | 3 | 📹 **[WebRTC Ollama Video Call](https://github.com/vineetdev/WebRTC-Samples/tree/main/webrtc-ollama-call-videos)** | Real-time AI video communication system integrating WebRTC with Ollama for live LLM inference. Enables peer-to-peer video/audio streaming with low-latency AI processing. | [View](https://github.com/vineetdev/WebRTC-Samples/tree/main/webrtc-ollama-call-videos) |
 | 4 | 🔢 **[MNIST ML Classification Comparison](https://github.com/vineetdev/mnist-ml-classification-comparison)** | Comprehensive performance analysis of 6 ML algorithms (KNN, SVM, Random Forest, etc.) on MNIST dataset. Includes metrics, efficiency analysis, PCA impact study, and visualizations. | [View](https://github.com/vineetdev/mnist-ml-classification-comparison) |
-| 5 | 💬 **[Simple Chatbot with LangChain & Streamlit](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT)** | Basic LLM-powered conversational interface demonstrating LangChain integration with OpenAI API. Features clean Streamlit UI for real-time interactive conversations. | [View](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT) |
-| 6 | 🧠 **[Chatbot with History](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI)** | Advanced conversational AI with memory management. Maintains conversation context across multiple turns using LangChain, Streamlit, and OpenAI API with session-based tracking. | [View](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI) |
+| 5 | 📊 **[Regression Models Comparison](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial)** | Comprehensive comparison of Simple Linear, Multiple Linear, and Polynomial Regression models for predicting bike rental counts. Includes data preprocessing, model evaluation, performance analysis, and interactive Streamlit app. | [View](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial) |
+| 6 | 💬 **[Simple Chatbot with LangChain & Streamlit](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT)** | Basic LLM-powered conversational interface demonstrating LangChain integration with OpenAI API. Features clean Streamlit UI for real-time interactive conversations. | [View](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT) |
+| 7 | 🧠 **[Chatbot with History](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI)** | Advanced conversational AI with memory management. Maintains conversation context across multiple turns using LangChain, Streamlit, and OpenAI API with session-based tracking. | [View](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI) |
 <!-- Add new projects above this line -->
+
+---
+
+## 📧 Contact
+
+Feel free to reach out for collaborations, questions, or opportunities!
+
+- **LinkedIn**: [https://www.linkedin.com/in/vineetkrsrivastava/]
+- **Email**: [mailto:communication.vineet@gmail.com]
 
 ---
 
@@ -139,7 +149,28 @@ A detailed comparison of 6 different ML classification algorithms on the MNIST d
 
 ---
 
-### 5. 💬 Simple Chatbot with LangChain & Streamlit
+### 5. 📊 Regression Models Comparison
+**Linear, Multiple Linear & Polynomial Regression Analysis**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial)
+
+A comprehensive comparison of three regression models for predicting bike rental counts:
+- **Simple Linear Regression**: Single-feature model using temperature as predictor
+- **Multiple Linear Regression**: Multi-feature model with weather and temporal variables
+- **Polynomial Regression**: Non-linear regression with quadratic temperature features
+
+**Key Features:**
+- Data preprocessing and feature scaling using StandardScaler
+- Model evaluation with R² scores and performance metrics
+- Residual analysis and visualization
+- Interactive Streamlit web application
+- Side-by-side model comparison with visualizations
+
+**Tech Stack:** Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Streamlit
+
+---
+
+### 6. 💬 Simple Chatbot with LangChain & Streamlit
 **Basic LLM-Powered Conversational Interface**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT)
@@ -154,7 +185,7 @@ A clean, simple chatbot implementation demonstrating:
 
 ---
 
-### 6. 🧠 Chatbot with History (LangChain, Streamlit, OpenAI)
+### 7. 🧠 Chatbot with History (LangChain, Streamlit, OpenAI)
 **Advanced Conversational AI with Memory**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI)
@@ -217,11 +248,11 @@ An enhanced chatbot with conversation memory and context retention:
 
 | Category | Count | Technologies |
 |----------|-------|--------------|
-| **ML/DL Projects** | 1 | Scikit-learn, Classification Algorithms |
 | **Generative AI** | 3 | LangChain, OpenAI, Ollama, Streamlit |
+| **ML/DL Projects** | 2 | Scikit-learn, Classification Algorithms, Regression Models |
 | **NLP & Knowledge Graphs** | 1 | LangChain, NetworkX, Entity Extraction |
 | **Real-time AI** | 1 | WebRTC, Ollama, Video Processing |
-| **Total Projects** | 6 | Multiple AI/ML domains |
+| **Total Projects** | 7 | Multiple AI/ML domains |
 
 ---
 
@@ -256,6 +287,7 @@ This portfolio represents a progression from:
 - [Financial Knowledge Graph Extractor](https://github.com/vineetdev/financial-knowledge-graph-extractor)
 - [WebRTC Ollama Integration](https://github.com/vineetdev/WebRTC-Samples/tree/main/webrtc-ollama-call-videos)
 - [MNIST ML Classification Comparison](https://github.com/vineetdev/mnist-ml-classification-comparison)
+- [Regression Models Comparison](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial)
 - [Simple Chatbot](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT)
 - [Chatbot with History](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI)
 
@@ -276,12 +308,6 @@ This portfolio showcases practical applications of AI/ML technologies across var
 - Comprehensive documentation
 - Performance optimization
 - User-friendly interfaces
-
----
-
-## 📧 Contact
-
-For questions, collaborations, or opportunities, feel free to reach out!
 
 ---
 
