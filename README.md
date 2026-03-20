@@ -20,7 +20,7 @@
 
 This portfolio presents a comprehensive collection of projects spanning from traditional machine learning algorithms to cutting-edge generative AI applications. Each project demonstrates different aspects of AI development, including:
 
-- **Generative AI**: LLM-powered applications, chatbots, and content generation
+- **Generative AI**: LLM-powered applications, chatbots, content generation, and **parameter-efficient fine-tuning** (LoRA / QLoRA) on domain datasets
 - **NLP & Knowledge Graphs**: Entity extraction, relationship mapping, and structured data processing
 - **Real-time AI**: WebRTC integration with AI models for live applications
 - **Deep Learning**: Neural network architectures and training pipelines
@@ -44,10 +44,11 @@ This portfolio presents a comprehensive collection of projects spanning from tra
 | 1 | 🎙️ **[Synthetic Radio Host](https://github.com/vineetdev/Synthetic-Radio-Host)** | AI-powered podcast generation system using Ollama LLM and ElevenLabs TTS. Generates Hinglish conversations with multi-speaker dialogue, automatic content research, and comprehensive testing. | [View](https://github.com/vineetdev/Synthetic-Radio-Host) |
 | 2 | 💼 **[Financial Knowledge Graph Extractor](https://github.com/vineetdev/financial-knowledge-graph-extractor)** | Transforms unstructured financial documents into structured knowledge graphs. Extracts entities, relationships, and financial metrics using LangChain and OpenAI GPT-4o-mini. | [View](https://github.com/vineetdev/financial-knowledge-graph-extractor) |
 | 3 | 📹 **[WebRTC Ollama Video Call](https://github.com/vineetdev/WebRTC-Samples/tree/main/webrtc-ollama-call-videos)** | Real-time AI video communication system integrating WebRTC with Ollama for live LLM inference. Enables peer-to-peer video/audio streaming with low-latency AI processing. | [View](https://github.com/vineetdev/WebRTC-Samples/tree/main/webrtc-ollama-call-videos) |
-| 4 | 🔢 **[MNIST ML Classification Comparison](https://github.com/vineetdev/mnist-ml-classification-comparison)** | Comprehensive performance analysis of 6 ML algorithms (KNN, SVM, Random Forest, etc.) on MNIST dataset. Includes metrics, efficiency analysis, PCA impact study, and visualizations. | [View](https://github.com/vineetdev/mnist-ml-classification-comparison) |
-| 5 | 📊 **[Regression Models Comparison](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial)** | Comprehensive comparison of Simple Linear, Multiple Linear, and Polynomial Regression models for predicting bike rental counts. Includes data preprocessing, model evaluation, performance analysis, and interactive Streamlit app. | [View](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial) |
-| 6 | 💬 **[Simple Chatbot with LangChain & Streamlit](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT)** | Basic LLM-powered conversational interface demonstrating LangChain integration with OpenAI API. Features clean Streamlit UI for real-time interactive conversations. | [View](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT) |
-| 7 | 🧠 **[Chatbot with History](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI)** | Advanced conversational AI with memory management. Maintains conversation context across multiple turns using LangChain, Streamlit, and OpenAI API with session-based tracking. | [View](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI) |
+| 4 | 🏦 **[Banking QA LLM Fine-Tuning (DistilGPT-2 & TinyLlama)](https://github.com/vineetdev/banking-qa-llm-finetune-distilgpt2-tinyllama)** | Parameter-efficient fine-tuning on Hugging Face **Bitext** retail banking QA: **LoRA** on DistilGPT-2 and **QLoRA** (4-bit) on TinyLlama 1.1B Chat. Jupyter notebooks with BLEU, ROUGE, and sentence-embedding cosine evaluation. | [View](https://github.com/vineetdev/banking-qa-llm-finetune-distilgpt2-tinyllama) |
+| 5 | 💬 **[Simple Chatbot with LangChain & Streamlit](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT)** | Basic LLM-powered conversational interface demonstrating LangChain integration with OpenAI API. Features clean Streamlit UI for real-time interactive conversations. | [View](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT) |
+| 6 | 🧠 **[Chatbot with History](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI)** | Advanced conversational AI with memory management. Maintains conversation context across multiple turns using LangChain, Streamlit, and OpenAI API with session-based tracking. | [View](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI) |
+| 7 | 🔢 **[MNIST ML Classification Comparison](https://github.com/vineetdev/mnist-ml-classification-comparison)** | Comprehensive performance analysis of 6 ML algorithms (KNN, SVM, Random Forest, etc.) on MNIST dataset. Includes metrics, efficiency analysis, PCA impact study, and visualizations. | [View](https://github.com/vineetdev/mnist-ml-classification-comparison) |
+| 8 | 📊 **[Regression Models Comparison](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial)** | Comprehensive comparison of Simple Linear, Multiple Linear, and Polynomial Regression models for predicting bike rental counts. Includes data preprocessing, model evaluation, performance analysis, and interactive Streamlit app. | [View](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial) |
 <!-- Add new projects above this line -->
 
 ---
@@ -128,7 +129,63 @@ Integration of AI models with real-time video communication:
 
 ---
 
-### 4. 🔢 MNIST ML Classification Comparison
+### 4. 🏦 Banking QA LLM Fine-Tuning (DistilGPT-2 & TinyLlama)
+**Parameter-Efficient Fine-Tuning on Retail Banking FAQs**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/vineetdev/banking-qa-llm-finetune-distilgpt2-tinyllama)
+
+Domain adaptation of small LMs on the public [Bitext Retail Banking LLM Chatbot Training Dataset](https://huggingface.co/datasets/bitext/Bitext-retail-banking-llm-chatbot-training-dataset) using **PEFT**—mirroring the same banking QA task at two scales:
+
+- **DistilGPT-2 + LoRA**: Full-precision LoRA on attention projections; train/val caps (10k/1k); **10** evenly spaced held-out queries; early stopping; optional interactive prompt demo.
+- **TinyLlama 1.1B Chat + QLoRA**: 4-bit quantized backbone with LoRA adapters; **20k / 2k** train/val on the first 22k rows; label masking on assistant tokens; **2**-question before/after checks plus automated metrics.
+- **Evaluation**: NLTK **BLEU**, **ROUGE-1/2/L**, and **cosine similarity** via `sentence-transformers` (`all-MiniLM-L6-v2`)—README explains why cosine and ROUGE-1 matter most for long, paraphrased banking answers.
+
+**Key Features:**
+- Side-by-side notebooks: `distilgpt2-bitext-finetune.ipynb` and `tinyllama-bitext-banking-finetune.ipynb`
+- `requirements.txt` for local installs; TinyLlama path optimized for **Google Colab** (`bitsandbytes` for 4-bit)
+- Honest **scope & limitations** (eval sets differ; not a controlled cross-model benchmark without a shared held-out file)
+
+**Tech Stack:** Python, PyTorch, Hugging Face `transformers` / `datasets`, PEFT (LoRA), bitsandbytes (QLoRA), NLTK, rouge-score, sentence-transformers, scikit-learn
+
+---
+
+### 5. 💬 Simple Chatbot with LangChain & Streamlit
+**Basic LLM-Powered Conversational Interface**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT)
+
+A clean, simple chatbot implementation demonstrating:
+- **LangChain Integration**: Chain-based conversation flow
+- **Streamlit UI**: User-friendly web interface
+- **LLM Integration**: OpenAI API for natural language understanding
+- **Real-time Chat**: Interactive conversation experience
+
+**Tech Stack:** Python, LangChain, Streamlit, OpenAI API
+
+---
+
+### 6. 🧠 Chatbot with History (LangChain, Streamlit, OpenAI)
+**Advanced Conversational AI with Memory**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI)
+
+An enhanced chatbot with conversation memory and context retention:
+- **Conversation History**: Maintains context across multiple turns
+- **Memory Management**: Efficient storage and retrieval of chat history
+- **Context-Aware Responses**: Understands previous conversation context
+- **Streamlit Integration**: Beautiful, responsive web interface
+
+**Key Features:**
+- Session-based conversation tracking
+- Context-aware response generation
+- History visualization and management
+- Error handling and graceful degradation
+
+**Tech Stack:** Python, LangChain, Streamlit, OpenAI API, Session State Management
+
+---
+
+### 7. 🔢 MNIST ML Classification Comparison
 **Comprehensive Algorithm Performance Analysis**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/vineetdev/mnist-ml-classification-comparison)
@@ -149,7 +206,7 @@ A detailed comparison of 6 different ML classification algorithms on the MNIST d
 
 ---
 
-### 5. 📊 Regression Models Comparison
+### 8. 📊 Regression Models Comparison
 **Linear, Multiple Linear & Polynomial Regression Analysis**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial)
@@ -168,42 +225,6 @@ A comprehensive comparison of three regression models for predicting bike rental
 
 **Tech Stack:** Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Streamlit
 
----
-
-### 6. 💬 Simple Chatbot with LangChain & Streamlit
-**Basic LLM-Powered Conversational Interface**
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT)
-
-A clean, simple chatbot implementation demonstrating:
-- **LangChain Integration**: Chain-based conversation flow
-- **Streamlit UI**: User-friendly web interface
-- **LLM Integration**: OpenAI API for natural language understanding
-- **Real-time Chat**: Interactive conversation experience
-
-**Tech Stack:** Python, LangChain, Streamlit, OpenAI API
-
----
-
-### 7. 🧠 Chatbot with History (LangChain, Streamlit, OpenAI)
-**Advanced Conversational AI with Memory**
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI)
-
-An enhanced chatbot with conversation memory and context retention:
-- **Conversation History**: Maintains context across multiple turns
-- **Memory Management**: Efficient storage and retrieval of chat history
-- **Context-Aware Responses**: Understands previous conversation context
-- **Streamlit Integration**: Beautiful, responsive web interface
-
-**Key Features:**
-- Session-based conversation tracking
-- Context-aware response generation
-- History visualization and management
-- Error handling and graceful degradation
-
-**Tech Stack:** Python, LangChain, Streamlit, OpenAI API, Session State Management
-
 <!-- Add new project detailed sections above this line -->
 
 ---
@@ -217,9 +238,9 @@ An enhanced chatbot with conversation memory and context retention:
 - **Visualization**: Matplotlib, Seaborn, Plotly
 
 ### Generative AI & LLMs
-- **Frameworks**: LangChain, LangGraph
+- **Frameworks**: LangChain, LangGraph, Hugging Face Transformers, PEFT (LoRA / QLoRA)
 - **APIs**: OpenAI (GPT-4, GPT-3.5), Ollama (local LLMs)
-- **Applications**: Chatbots, content generation, text-to-speech
+- **Applications**: Chatbots, content generation, text-to-speech, domain-specific LM fine-tuning
 - **Memory Management**: Conversation history, context retention
 
 ### Natural Language Processing
@@ -248,11 +269,11 @@ An enhanced chatbot with conversation memory and context retention:
 
 | Category | Count | Technologies |
 |----------|-------|--------------|
-| **Generative AI** | 3 | LangChain, OpenAI, Ollama, Streamlit |
+| **Generative AI** | 4 | LangChain, OpenAI, Ollama, Streamlit, Transformers, PEFT (LoRA/QLoRA) |
 | **ML/DL Projects** | 2 | Scikit-learn, Classification Algorithms, Regression Models |
 | **NLP & Knowledge Graphs** | 1 | LangChain, NetworkX, Entity Extraction |
 | **Real-time AI** | 1 | WebRTC, Ollama, Video Processing |
-| **Total Projects** | 7 | Multiple AI/ML domains |
+| **Total Projects** | 8 | Multiple AI/ML domains |
 
 ---
 
@@ -273,6 +294,7 @@ This portfolio represents a progression from:
 - ✅ Built end-to-end AI systems from data processing to deployment
 - ✅ Implemented multiple ML algorithms with comprehensive performance analysis
 - ✅ Created production-ready chatbots with conversation memory
+- ✅ Fine-tuned small LMs on retail banking QA with LoRA and QLoRA (Hugging Face PEFT)
 - ✅ Developed knowledge graph extraction systems for financial documents
 - ✅ Integrated real-time AI with video communication protocols
 - ✅ Maintained high code quality with comprehensive test suites
@@ -286,10 +308,11 @@ This portfolio represents a progression from:
 - [Synthetic Radio Host](https://github.com/vineetdev/Synthetic-Radio-Host)
 - [Financial Knowledge Graph Extractor](https://github.com/vineetdev/financial-knowledge-graph-extractor)
 - [WebRTC Ollama Integration](https://github.com/vineetdev/WebRTC-Samples/tree/main/webrtc-ollama-call-videos)
-- [MNIST ML Classification Comparison](https://github.com/vineetdev/mnist-ml-classification-comparison)
-- [Regression Models Comparison](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial)
+- [Banking QA LLM Fine-Tuning (DistilGPT-2 & TinyLlama)](https://github.com/vineetdev/banking-qa-llm-finetune-distilgpt2-tinyllama)
 - [Simple Chatbot](https://github.com/vineetdev/SIMPLE-CHATBOT-WITH-LANGCHAIN-STREAMLIT)
 - [Chatbot with History](https://github.com/vineetdev/CHATBOT-WITH-HISTORY-LANGCHAIN-STREAMLIT-OPENAI)
+- [MNIST ML Classification Comparison](https://github.com/vineetdev/mnist-ml-classification-comparison)
+- [Regression Models Comparison](https://github.com/vineetdev/regression-comparison-linear-multiple-polynomial)
 
 ---
 
